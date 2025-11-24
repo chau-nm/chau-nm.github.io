@@ -25,6 +25,6 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_PAGE_ACCOUNT_ID }}
           command: |
-            pages project list
             pages deploy build/ --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
