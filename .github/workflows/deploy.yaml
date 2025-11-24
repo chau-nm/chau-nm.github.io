@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '18'
       - run: |
-          echo "{\"mailService\": ${{ secrets.MAIL_SERVICE }}, \"mailThankYouTemplate\": ${{ secrets.MAIL_THANK_YOU_TEMPLATE }}, \"mailFeedbackTemplate\": ${{ secrets.MAIL_FEEDBACK_TEMPLATE }}, \"publicKey\": ${{ secrets.PUBLIC_KEY }}}" > src/mail/config.json
+          echo "{\"mailService\": \"${{ secrets.MAIL_SERVICE }}\", \"mailThankYouTemplate\": \"${{ secrets.MAIL_THANK_YOU_TEMPLATE }}\", \"mailFeedbackTemplate\": \"${{ secrets.MAIL_FEEDBACK_TEMPLATE }}\", \"publicKey\": \"${{ secrets.PUBLIC_KEY }}\"}" > src/mail/config.json
       - name: Install dependencies
         run: yarn install
       - name: Build
