@@ -1,6 +1,6 @@
 ### CHAU-NM'S PORTFOLIO
 
-> maintenancing
+> maintenancing.
 
 Welcome to my Portfolio.
 
