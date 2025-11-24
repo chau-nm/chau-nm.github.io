@@ -1,5 +1,6 @@
-### CHAU-NM'S RESUME
-Deployment: https://chau-nm.github.io/resume
+### CHAU-NM'S PORTFOLIO
+
+Welcome to my Portfolio.
 
 ## Preview
 ![portfolio demo](src/assets/images/demo.gif)
