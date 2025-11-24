@@ -26,4 +26,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: |
+            pages project list
             pages deploy build/ --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
