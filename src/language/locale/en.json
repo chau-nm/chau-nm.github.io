@@ -63,6 +63,25 @@
       "result": "I have completed the functionalities requested by the client."
     }
   },
+  "myProject": {
+    "title": "MY PROJECTS",
+    "shoppingSystem": {
+      "title": "Shopping System",
+      "description": "A trial project assigned by the mentor to assess individual capabilities. I received detailed design from the mentor, then proceeded with coding and testing. This project was completed in about two weeks and received positive feedback from the mentor."
+    },
+    "urikataSystem": {
+      "title": "Urikata System",
+      "description": "This was a real project where my mentor assigned me specific functionalities to implement. I received a source code that had several functionalities removed and detailed designs of those. I completed these functionalities and delivered the final work to my mentor."
+    },
+    "knowledgePortal": {
+      "title": "Knowledge Portal",
+      "description": "This project provides services for universities in Japan. At the beginning of this project, I was lucky to participate as an intern with four colleagues. We finished our internship and have been contracted by the client ever since."
+    },
+    "knowledgePortalGateway": {
+      "title": "Knowledge Portal Gateway",
+      "description": "An IoT project centered around using a QR code scanner to control door access. I developed the device's operations according to the client's design as outlined in Notion and completed the functionalities requested by the client."
+    }
+  },
   "repository": {
     "title": "REPOSITORY",
     "view": "View detail",

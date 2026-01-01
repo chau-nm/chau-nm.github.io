@@ -1,0 +1,19 @@
+@import "theme/sass/theme";
+
+.myProject {
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .myProject {
+    .project-container {
+      gap: 40px;
+    }
+  }
+}
+

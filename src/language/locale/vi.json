@@ -63,6 +63,25 @@
       "result": "Tôi đã hoàn thành các chức năng mà khách hàng yêu cầu."
     }
   },
+  "myProject": {
+    "title": "DỰ ÁN CỦA TÔI",
+    "shoppingSystem": {
+      "title": "Shopping System",
+      "description": "Một dự án được giao bởi mentor dùng để đánh giá năng lực cá nhân của tôi. Tôi đã nhận thiết kế chi tiết từ mentor sau đó tiến hành code và test. Dự án này được hoàn thành trong khoảng hai tuần và nhận được phản hồi tích cực từ người hướng dẫn."
+    },
+    "urikataSystem": {
+      "title": "Urikata System",
+      "description": "Đây là một dự án thực tế, mentor trích một phần chức năng trong dự án và giao cho tôi. Tôi đã nhận được một bộ source với một vài chức năng bị thiếu sót và thiết kế chi tiết của các chức năng này. Tôi đã hoàn thành các chức năng này và giao sản phẩm cuối cùng cho mentor."
+    },
+    "knowledgePortal": {
+      "title": "Knowledge Portal",
+      "description": "Dự án này cung cấp dịch vụ cho các trường đại học tại Nhật Bản. Vào thời điểm bắt đầu của dự án, tôi đã may mắn được tham gia thử việc để nhận dự án này từ phía khách hàng cùng với 4 đồng nghiệp khác. Chúng tôi đã hoàn thành đợt thử việc và được khách hàng ký hợp đồng."
+    },
+    "knowledgePortalGateway": {
+      "title": "Knowledge Portal Gateway",
+      "description": "Đây là một dự án IoT tập trung vào việc sử dụng máy quét mã QR để kiểm soát cửa ra vào. Tôi đã phát triển hoạt động của thiết bị theo thiết kế của khách hàng đã gửi trong Notion và hoàn thành các chức năng mà khách hàng yêu cầu."
+    }
+  },
   "repository": {
     "title": "Kho lưu trữ",
     "view": "Xem chi tiết",

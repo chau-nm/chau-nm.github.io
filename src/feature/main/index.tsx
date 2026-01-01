@@ -17,6 +17,7 @@ import Contact from "./Contact";
 import SettingFAB from "./SettingFAB";
 
 import "./main.scss";
+import MyProject from "./MyProject";
 
 const Main: FC = () => {
   const { section } = useParams();
@@ -73,7 +74,8 @@ const Main: FC = () => {
       {/* <Album /> */}
       {/* <Technical /> */}
       <Skill />
-      <Experience />
+      {/* <Experience /> */}
+      <MyProject />
       <Repository />
       <Contact />
 
