@@ -1,7 +1,6 @@
-import {FC, ReactNode} from "react";
+import {FC, ReactNode, useState} from "react";
 import styles from "./projectItem.module.scss";
 import classNames from "classnames";
-import {useTranslation} from "react-i18next";
 
 type ProjectItemProps = {
 	setRef: (element: HTMLDivElement | null) => void;
@@ -10,17 +9,22 @@ type ProjectItemProps = {
 		title: string;
 		description: ReactNode;
 		technologies?: string[];
-		link?: string;
 	};
 	isEven: boolean;
 };
+
+const MAX_VISIBLE_TECH = 3;
 
 export const ProjectItem: FC<ProjectItemProps> = ({
 	setRef,
 	project,
 	isEven,
 }) => {
-	const {t} = useTranslation();
+	const [showPopover, setShowPopover] = useState(false);
+	
+	const visibleTechs = project.technologies?.slice(0, MAX_VISIBLE_TECH) || [];
+	const hiddenTechs = project.technologies?.slice(MAX_VISIBLE_TECH) || [];
+	const hasMore = (project.technologies?.length || 0) > MAX_VISIBLE_TECH;
 	
 	return (
 		<div
@@ -39,22 +43,32 @@ export const ProjectItem: FC<ProjectItemProps> = ({
 				</div>
 				{project.technologies && project.technologies.length > 0 && (
 					<div className={styles["project-technologies"]}>
-						{project.technologies.map((tech, index) => (
-							<img
+						{visibleTechs.map((tech, index) => (
+							<span
 								key={index}
-								src={tech}
-								alt=""
-								height={30}
-								className={styles["technology-icon"]}
-							/>
+								className={styles["technology-item"]}
+							>
+								{tech}
+							</span>
 						))}
-					</div>
-				)}
-				{project.link && (
-					<div className={styles["project-link"]}>
-						<a href={project.link} target="_blank" rel="noopener noreferrer">
-							{t("repository.view")} →
-						</a>
+						{hasMore && (
+							<span 
+								className={styles["technology-more"]}
+								onMouseEnter={() => setShowPopover(true)}
+								onMouseLeave={() => setShowPopover(false)}
+							>
+								+{hiddenTechs.length}
+								{showPopover && (
+									<div className={styles["technology-popover"]}>
+										{hiddenTechs.map((tech, index) => (
+											<span key={index} className={styles["technology-item"]}>
+												{tech}
+											</span>
+										))}
+									</div>
+								)}
+							</span>
+						)}
 					</div>
 				)}
 			</div>
