@@ -1,15 +1,25 @@
 .item-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(394px, 1fr));
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
   margin-bottom: 50px;
 }
 
-.more a {
-  display: block;
-  width: 100px;
-  text-align: center;
-  padding: 10px 20px;
-  margin: auto;
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  a {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .item-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px 0;
+  }
 }

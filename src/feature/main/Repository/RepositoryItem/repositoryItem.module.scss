@@ -3,114 +3,332 @@
 .repository-item {
   display: flex;
   flex-direction: column;
-  min-height: 150px;
-  border-radius: 4px;
-  padding: 15px;
+  min-height: 180px;
+  border-radius: 12px;
+  padding: 25px;
   box-sizing: border-box;
-  transition: scale 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   &:hover {
-    scale: 1.02;
+    transform: translateY(-5px);
 
-    .bottom .view-button a svg {
-      visibility: visible;
-    }
-
-    .bottom .view-button a svg.double-left {
-      animation: doubleLeftHoverLoop infinite 1s;
-    }
-
-    .bottom .view-button a svg.double-right {
-      animation: doubleRightHoverLoop infinite 1s;
-    }
-
-    @keyframes doubleLeftHoverLoop {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(8px);
-        opacity: 0.4;
-      }
-    }
-
-    @keyframes doubleRightHoverLoop {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(-8px);
-        opacity: 0.4;
-      }
+    &::before {
+      opacity: 1;
     }
   }
 
   .name {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     h3 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: "alegreya";
+      margin: 0;
+      letter-spacing: 0.5px;
     }
   }
 
   .description {
     flex: 1;
     margin-bottom: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      margin: 0;
     }
   }
 
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .technologies {
+    .bottom {
       display: flex;
-      gap: 5px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
 
-      .technology-item {
+      .technologies {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 33px;
-        background-color: #ffffff;
-        border-radius: 3px;
-        padding: 3px;
+        flex-wrap: wrap;
+        gap: 8px;
+        flex: 1;
+        position: relative;
+
+        .technology-item {
+          display: inline-flex;
+          align-items: center;
+          padding: 6px 12px;
+          border-radius: 6px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          transition: all 0.3s ease;
+        }
+
+        .technology-more {
+          display: inline-flex;
+          align-items: center;
+          padding: 6px 12px;
+          border-radius: 6px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .technology-popover {
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          margin-bottom: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          padding: 12px;
+          border-radius: 8px;
+          z-index: 10;
+          animation: popoverFadeIn 0.2s ease;
+          min-width: 150px;
+
+          @keyframes popoverFadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(5px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid currentColor;
+          }
+        }
+      }
+
+      .view-button {
+        flex-shrink: 0;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          gap: 8px;
+        }
       }
     }
-
-    .view-button a {
-      display: flex;
-      gap: 10px;
-      text-transform: uppercase;
-      font-weight: bold;
-
-      svg {
-        visibility: hidden;
-        font-size: 1.2rem;
-      }
-    }
-  }
 }
 
 :global(.theme-dark) {
   .repository-item {
-    border: $darkBorder;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(22, 112, 240, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
-    &, .technology-item {
-      box-shadow: $darkShadow;
+    &:hover {
+      background: rgba(22, 112, 240, 0.08);
+      border-color: rgba(23, 121, 255, 0.4);
+      box-shadow: 0 8px 25px rgba(22, 112, 240, 0.2);
+
+      &::before {
+        background: linear-gradient(90deg, transparent, #1779ff, transparent);
+      }
+    }
+
+    .name h3 {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #FFFFFF, #1779ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .bottom {
+      .technologies {
+        .technology-item {
+          background: rgba(23, 121, 255, 0.2);
+          color: #FFFFFF;
+          border: 1px solid rgba(23, 121, 255, 0.4);
+          box-shadow: 0 2px 8px rgba(23, 121, 255, 0.2);
+
+          &:hover {
+            background: rgba(23, 121, 255, 0.35);
+            border-color: rgba(23, 121, 255, 0.6);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(23, 121, 255, 0.3);
+          }
+        }
+
+        .technology-more {
+          background: rgba(22, 112, 240, 0.3);
+          color: #FFFFFF;
+          border: 1px solid rgba(23, 121, 255, 0.5);
+          box-shadow: 0 2px 8px rgba(22, 112, 240, 0.3);
+
+          &:hover {
+            background: rgba(23, 121, 255, 0.4);
+            border-color: rgba(23, 121, 255, 0.7);
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(23, 121, 255, 0.4);
+          }
+        }
+
+        .technology-popover {
+          background: rgba(12, 0, 43, 0.95);
+          border: 1px solid rgba(23, 121, 255, 0.5);
+          box-shadow: 0 8px 30px rgba(22, 112, 240, 0.4);
+
+          &::after {
+            border-top-color: rgba(12, 0, 43, 0.95);
+          }
+
+          .technology-item {
+            background: rgba(23, 121, 255, 0.25);
+            color: #FFFFFF;
+            border: 1px solid rgba(23, 121, 255, 0.5);
+          }
+        }
+      }
+
+      .view-button a {
+        background: linear-gradient(135deg, #1670f0, #1779ff);
+        color: #FFFFFF;
+        border: none;
+        box-shadow: 0 2px 8px rgba(22, 112, 240, 0.3);
+
+        &:hover {
+          background: linear-gradient(135deg, #1779ff, #1a7fff);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(23, 121, 255, 0.5);
+        }
+      }
     }
   }
 }
 
 :global(.theme-light) {
   .repository-item {
-    border: $lightBorder;
-    box-shadow: $lightShadow;
     background-color: #FFFFFF;
+    border: 1px solid rgba(22, 112, 240, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.98);
+      border-color: rgba(22, 112, 240, 0.4);
+      box-shadow: 0 8px 25px rgba(22, 112, 240, 0.15);
+
+      &::before {
+        background: linear-gradient(90deg, transparent, #1670f0, transparent);
+      }
+    }
+
+    .name h3 {
+      color: #1670f0;
+      background: linear-gradient(135deg, #1670f0, #1779ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      color: #444444;
+    }
+
+    .bottom {
+      .technologies {
+        .technology-item {
+          background: rgba(22, 112, 240, 0.15);
+          color: #1670f0;
+          border: 1px solid rgba(22, 112, 240, 0.3);
+          box-shadow: 0 2px 6px rgba(22, 112, 240, 0.15);
+
+          &:hover {
+            background: rgba(22, 112, 240, 0.25);
+            border-color: rgba(22, 112, 240, 0.5);
+            color: #1779ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 112, 240, 0.25);
+          }
+        }
+
+        .technology-more {
+          background: rgba(22, 112, 240, 0.2);
+          color: #1670f0;
+          border: 1px solid rgba(22, 112, 240, 0.4);
+          box-shadow: 0 2px 6px rgba(22, 112, 240, 0.2);
+
+          &:hover {
+            background: rgba(22, 112, 240, 0.3);
+            border-color: rgba(22, 112, 240, 0.6);
+            color: #1779ff;
+            box-shadow: 0 4px 12px rgba(22, 112, 240, 0.3);
+          }
+        }
+
+        .technology-popover {
+          background: rgba(255, 255, 255, 0.98);
+          border: 1px solid rgba(22, 112, 240, 0.4);
+          box-shadow: 0 8px 30px rgba(22, 112, 240, 0.25);
+
+          &::after {
+            border-top-color: rgba(255, 255, 255, 0.98);
+          }
+
+          .technology-item {
+            background: rgba(22, 112, 240, 0.2);
+            color: #1670f0;
+            border: 1px solid rgba(22, 112, 240, 0.4);
+          }
+        }
+      }
+
+      .view-button a {
+        background: linear-gradient(135deg, #1670f0, #1779ff);
+        color: #FFFFFF;
+        border: none;
+        box-shadow: 0 2px 8px rgba(22, 112, 240, 0.25);
+
+        &:hover {
+          background: linear-gradient(135deg, #1779ff, #1a7fff);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(22, 112, 240, 0.4);
+        }
+      }
+    }
   }
 }

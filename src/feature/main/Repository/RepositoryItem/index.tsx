@@ -1,6 +1,5 @@
-import {FC, ReactNode} from "react";
+import {FC, ReactNode, useState} from "react";
 import styles from "./repositoryItem.module.scss";
-import {DoubleLeftOutline, DoubleRightOutline} from "assets/icons";
 import {useTranslation} from "react-i18next";
 
 type RepositoryItemProps = {
@@ -10,6 +9,8 @@ type RepositoryItemProps = {
 	link: string;
 }
 
+const MAX_VISIBLE_TECH = 2;
+
 export const RepositoryItem: FC<RepositoryItemProps> = ({
 	name,
 	link,
@@ -17,6 +18,10 @@ export const RepositoryItem: FC<RepositoryItemProps> = ({
 	technilogies
 }) => {
 	const {t} = useTranslation();
+	const [showPopover, setShowPopover] = useState(false);
+	const visibleTechs = technilogies.slice(0, MAX_VISIBLE_TECH);
+	const hiddenTechs = technilogies.slice(MAX_VISIBLE_TECH);
+	const hasMore = technilogies.length > MAX_VISIBLE_TECH;
 	
 	return (
 		<div className={styles["repository-item"]}>
@@ -27,20 +32,38 @@ export const RepositoryItem: FC<RepositoryItemProps> = ({
 				{description}
 			</div>
 			<div className={styles.bottom}>
-				<ul className={styles.technologies}>
+				<div 
+					className={styles.technologies}
+					onMouseEnter={() => hasMore && setShowPopover(true)}
+					onMouseLeave={() => setShowPopover(false)}
+				>
 					{
-						technilogies.map((technology, index) => (
-							<li key={index} className={styles["technology-item"]}>
-								<img src={technology} alt={""} height={30}/>
-							</li>
+						visibleTechs.map((technology, index) => (
+							<span key={index} className={styles["technology-item"]}>
+								{technology}
+							</span>
 						))
 					}
-				</ul>
+					{hasMore && (
+						<>
+							<span className={styles["technology-more"]}>
+								+{hiddenTechs.length}
+							</span>
+							{showPopover && (
+								<div className={styles["technology-popover"]}>
+									{hiddenTechs.map((technology, index) => (
+										<span key={index} className={styles["technology-item"]}>
+											{technology}
+										</span>
+									))}
+								</div>
+							)}
+						</>
+					)}
+				</div>
 				<div className={styles["view-button"]}>
-					<a href={link}>
-						<DoubleRightOutline className={styles["double-left"]}/>
-						<span style={{whiteSpace: "nowrap"}}> {t("repository.view")} </span>
-						<DoubleLeftOutline className={styles["double-right"]}/>
+					<a href={link} target="_blank" rel="noopener noreferrer">
+						{t("repository.view")} →
 					</a>
 				</div>
 			</div>
