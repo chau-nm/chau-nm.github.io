@@ -6,6 +6,7 @@ import classNames from "classnames";
 import {useTranslation} from "react-i18next";
 import {ThemeContext} from "../../../../theme/ThemeContext";
 import {ThemeEnum} from "../../../../theme/themeEnum";
+import {CaretDownOutLine} from "assets/icons";
 
 type SkillBlockProps = {
 	title: string;
@@ -58,14 +59,15 @@ export const SkillBlock: FC<SkillBlockProps> = ({
 					<p>{content}</p>
 				</div>
 				<div
-					className={styles["toggle-button"]}
+					className={classNames(styles["toggle-button"], {
+						[styles["toggle-button--active"]]: isShowMore
+					})}
 					onClick={toggle}
 				>
-					{
-						!isShowMore
-							? <span>{t("skill.showMore")}</span>
-							: <span>{t("skill.showLess")}</span>
-					}
+					<span className={styles["toggle-text"]}>
+						{!isShowMore ? t("skill.showMore") : t("skill.showLess")}
+					</span>
+					<CaretDownOutLine className={styles["toggle-icon"]} />
 				</div>
 			</div>
 		</div>

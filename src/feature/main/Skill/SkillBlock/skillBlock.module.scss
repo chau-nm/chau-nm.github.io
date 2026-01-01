@@ -35,21 +35,49 @@
         }
 
         .toggle-button {
-            display: flex;
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            margin: 10px 0;
+            gap: 8px;
+            margin: 15px auto 5px;
+            padding: 8px 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
 
-            span {
-                background: linear-gradient(135deg, #1670f0, #1779ff);
-                background-clip: text;
-                color: transparent;
-                cursor: pointer;
-                transition: all 0.3s;
-                font-size: 1.3rem;
-                text-transform: uppercase;
+            .toggle-text {
+                font-size: 1rem;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+                position: relative;
+                transition: all 0.3s ease;
 
-                &:hover {
-                    opacity: 0.8;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    transition: width 0.3s ease;
+                }
+            }
+
+            .toggle-icon {
+                width: 16px;
+                height: 16px;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                .toggle-text::after {
+                    width: 100%;
+                }
+            }
+
+            &--active {
+                .toggle-icon {
+                    transform: rotate(180deg);
                 }
             }
         }
@@ -63,6 +91,30 @@
         .layer {
             border: $darkBorder;
             box-shadow: $darkShadow;
+
+            .toggle-button {
+                .toggle-text {
+                    color: rgba(255, 255, 255, 0.9);
+
+                    &::after {
+                        background: linear-gradient(90deg, #1670f0, #1779ff);
+                    }
+                }
+
+                .toggle-icon {
+                    fill: rgba(255, 255, 255, 0.7);
+                }
+
+                &:hover {
+                    .toggle-text {
+                        color: #FFFFFF;
+                    }
+
+                    .toggle-icon {
+                        fill: #1779ff;
+                    }
+                }
+            }
         }
 
         .light {
@@ -110,5 +162,29 @@
         border: $lightBorder;
         box-shadow: $lightShadow;
         background-color: #FFFFFF;
+
+        .toggle-button {
+            .toggle-text {
+                color: #333333;
+
+                &::after {
+                    background: linear-gradient(90deg, #1670f0, #1779ff);
+                }
+            }
+
+            .toggle-icon {
+                fill: #666666;
+            }
+
+            &:hover {
+                .toggle-text {
+                    color: #1670f0;
+                }
+
+                .toggle-icon {
+                    fill: #1670f0;
+                }
+            }
+        }
     }
 }
