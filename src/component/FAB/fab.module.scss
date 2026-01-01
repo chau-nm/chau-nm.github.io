@@ -31,12 +31,14 @@
     left: 23px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     z-index: 999;
 
     .fab-child {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
 
       .fab-child-container {
         position: relative;
@@ -48,16 +50,53 @@
           width: 50px;
           height: 50px;
           cursor: pointer;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 60px;
+            white-space: nowrap;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateX(-5px);
+          }
+
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+            &::after {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
         }
 
         .fab-submenu {
           position: absolute;
-          left: 55px;
+          left: 65px;
           bottom: 0;
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 15px;
         }
       }
     }

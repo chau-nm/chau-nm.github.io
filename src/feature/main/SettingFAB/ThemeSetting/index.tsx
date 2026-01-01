@@ -21,13 +21,17 @@ export const ThemeSetting: FC = () => {
             case ThemeEnum.DARK:
                 return <MoonOutline style={{width: 20, height: 20, fill: "#FFFFFF"}}/>;
             case ThemeEnum.LIGHT:
-                return <SunOutline style={{width: 20, height: 20, fill: "yellow"}}/>
+                return <SunOutline style={{width: 20, height: 20, fill: "#FFFFFF"}}/>
             default:
                 return <MoonOutline style={{width: 20, height: 20, fill: "#FFFFFF"}}/>;
         }
     }, [theme])
     
     return (
-        <FABChild icon={Icon} onClick={handleSetTheme}/>
+        <FABChild 
+            icon={Icon} 
+            onClick={handleSetTheme}
+            label="Theme / Giao diện"
+        />
     )
 }

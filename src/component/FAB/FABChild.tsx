@@ -7,12 +7,14 @@ interface FabChildProps {
   icon?: React.ReactNode;
   children?: React.ReactNode;
   onClick?: () => void;
+  label?: string;
 }
 
 export const FABChild: React.FC<FabChildProps> = ({
   icon,
   children,
   onClick,
+  label,
 }) => {
   const fabRef = useRef(null);
   
@@ -43,7 +45,11 @@ export const FABChild: React.FC<FabChildProps> = ({
 
   return (
     <div ref={fabRef} className={styles["fab-child-container"]}>
-      <button className={styles["fab-child-button"]} onClick={handleClick}>
+      <button 
+        className={styles["fab-child-button"]} 
+        onClick={handleClick}
+        data-label={label}
+      >
         {icon}
       </button>
       {children && isOpen && (
