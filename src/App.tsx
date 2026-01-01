@@ -12,6 +12,9 @@ import CV from "./feature/cv";
 import {ToastContainer} from "react-toastify";
 import Welcome from "./feature/welcome";
 
+const WELCOME_STORAGE_KEY = "lastWelcomeTime";
+const WELCOME_INTERVAL = 30 * 60 * 1000; // 30 minutes in milliseconds
+
 const App: FC = () => {
 	const [isLoading, setLoading] = useState(true);
 	const {theme} = useContext(ThemeContext);
@@ -28,7 +31,25 @@ const App: FC = () => {
 	}, [theme]);
 	
 	useEffect(() => {
-		setTimeout(() => setLoading(false), 10500);
+		const lastWelcomeTime = localStorage.getItem(WELCOME_STORAGE_KEY);
+		const now = Date.now();
+		
+		if (lastWelcomeTime) {
+			const timeSinceLastWelcome = now - parseInt(lastWelcomeTime, 10);
+			
+			if (timeSinceLastWelcome < WELCOME_INTERVAL) {
+				setLoading(false);
+				return;
+			}
+		}
+		
+		localStorage.setItem(WELCOME_STORAGE_KEY, now.toString());
+		
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 10500);
+		
+		return () => clearTimeout(timer);
 	}, []);
 	
 	if (isLoading) {
