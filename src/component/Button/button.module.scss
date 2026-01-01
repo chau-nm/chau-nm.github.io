@@ -42,7 +42,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(22, 112, 240, 0.3);
   }
 
   &:disabled {
@@ -104,7 +104,7 @@
 
 :global(.theme-dark) {
   .button {
-    background: linear-gradient(135deg, #1E90FF 0%, #32CD32 100%);
+    background: linear-gradient(135deg, #1670f0 0%, #1779ff 100%);
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
 
@@ -122,7 +122,7 @@
 
     &:hover {
       background-position: 100% 50%;
-      box-shadow: 0 8px 30px rgba(30, 144, 255, 0.4);
+      box-shadow: 0 8px 30px rgba(22, 112, 240, 0.5);
     }
 
     &:active {
@@ -130,41 +130,28 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.4), 0 8px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 0 3px rgba(22, 112, 240, 0.4), 0 8px 25px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
 :global(.theme-light) {
   .button {
-    background: linear-gradient(135deg, #2D9CDB 0%, #FF8C00 100%);
-    background-size: 200% 200%;
+    background: #1670f0;
     color: #FFFFFF;
-    animation: gradient-shift-light 3s ease infinite;
-
-    @keyframes gradient-shift-light {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     &:hover {
-      background-position: 100% 50%;
-      box-shadow: 0 8px 30px rgba(45, 156, 219, 0.4);
+      background: #1779ff;
+      box-shadow: 0 8px 30px rgba(22, 112, 240, 0.4);
     }
 
     &:active {
-      background-position: 0% 50%;
+      background: #1466e6;
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.4), 0 8px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 0 3px rgba(22, 112, 240, 0.4), 0 8px 25px rgba(0, 0, 0, 0.2);
     }
   }
 }

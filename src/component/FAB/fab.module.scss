@@ -66,20 +66,22 @@
 
 :global(.theme-dark) {
   .fab, .fab-child-button {
-    background: linear-gradient(to right, #007BFF, #4CAF50);
+    background: linear-gradient(135deg, #1670f0, #1779ff);
 
     &:hover {
-      background: linear-gradient(to right, #0056b3, #388e3c);
+      background: linear-gradient(135deg, #0d5bc4, #1466e6);
+      box-shadow: 0 4px 15px rgba(22, 112, 240, 0.4);
     }
   }
 }
 
 :global(.theme-light) {
   .fab, .fab-child-button {
-    background: linear-gradient(to right, #004080, #007f5c);
+    background: #1670f0;
 
     &:hover {
-      background: linear-gradient(to right, #0056b3, #388e3c);
+      background: #1779ff;
+      box-shadow: 0 4px 15px rgba(22, 112, 240, 0.4);
     }
   }
 }
