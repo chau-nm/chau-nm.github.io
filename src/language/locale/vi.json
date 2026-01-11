@@ -80,6 +80,14 @@
     "knowledgePortalGateway": {
       "title": "Knowledge Portal Gateway",
       "description": "Đây là một dự án IoT tập trung vào việc sử dụng máy quét mã QR để kiểm soát cửa ra vào. Tôi đã phát triển hoạt động của thiết bị theo thiết kế của khách hàng đã gửi trong Notion và hoàn thành các chức năng mà khách hàng yêu cầu."
+    },
+    "posRetail": {
+      "title": "POS-Retail",
+      "description": "Ứng dụng POS-retail được thiết kế để tối ưu hóa hoạt động bán hàng và quản lý kho cho các cửa hàng tiện lợi. Ứng dụng giúp chủ cửa hàng quản lý các hoạt động hàng ngày bao gồm giao dịch bán hàng, kho hàng, danh sách giá và các biến thể sản phẩm. Ứng dụng tích hợp với hệ thống CRM để quản lý tập trung kiểm soát truy cập và phân quyền."
+    },
+    "socialTool": {
+      "title": "Social Tool",
+      "description": "Nền tảng middleware để quản lý và lên lịch đăng bài trên mạng xã hội qua các kênh Meta và Google. Nền tảng cho phép các đội marketing lên lịch và xuất bản bài đăng lên Meta Business và Google Business, quản lý tài khoản mạng xã hội, và tối ưu hóa việc tạo nội dung với các tính năng quản lý media và chỉnh sửa hình ảnh. Nền tảng tích hợp với hệ thống CRM để quản lý truy cập và quyền của tài khoản mạng xã hội cho nhân viên công ty."
     }
   },
   "repository": {

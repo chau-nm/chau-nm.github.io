@@ -80,6 +80,14 @@
     "knowledgePortalGateway": {
       "title": "Knowledge Portal Gateway",
       "description": "An IoT project centered around using a QR code scanner to control door access. I developed the device's operations according to the client's design as outlined in Notion and completed the functionalities requested by the client."
+    },
+    "posRetail": {
+      "title": "POS-Retail",
+      "description": "A POS-retail application designed to streamline sales operations and inventory management for convenience stores. The application helps store owners manage their daily operations including sales transactions, product inventory, price lists, and item variants. It integrates with CRM systems for centralized access control and permission management."
+    },
+    "socialTool": {
+      "title": "Social Tool",
+      "description": "A middleware platform for managing and scheduling social media posts across Meta and Google channels. The platform enables marketing teams to schedule and publish posts to Meta Business and Google Business platforms, manage social media accounts, and streamline content creation with media management and image editing features. It integrates with CRM systems to manage social account access and permissions for company staff."
     }
   },
   "repository": {
