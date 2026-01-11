@@ -20,7 +20,7 @@
   },
   "about": {
     "title": "Tôi là ai?",
-    "content": "Xin chào, tôi là Nguyễn Minh Châu. Tôi là một software developer với 2 năm kinh nghiệm trong việc phát triển và bảo trì các ứng dụng phần mềm. Tôi có nền tảng vững chắc về Java, JavaScript & TypeScript, Python và PHP. Tôi đã làm việc trên các dự án liên quan đến React, Spring boot, Yii2, NestJS. Tôi đam mê tạo ra các giải pháp phần mềm hiệu quả và có thể mở rộng.",
+    "content": "Software Engineer với hơn 2 năm kinh nghiệm xây dựng các ứng dụng web có khả năng mở rộng và đáng tin cậy, tập trung mạnh vào phát triển backend và tích hợp hệ thống. Thành thạo PHP, JavaScript và TypeScript, với kinh nghiệm thực tế sử dụng Laravel, Symfony, Yii2, React.js và Vue.js. Có kinh nghiệm trong việc thiết kế RESTful APIs, tích hợp dịch vụ bên thứ ba, và làm việc với MySQL và PostgreSQL. Quen thuộc với CI/CD pipelines, môi trường Dockerized và các nền tảng đám mây. Một thành viên nhóm hợp tác đam mê xây dựng các hệ thống có thể bảo trì và liên tục cải thiện kỹ năng kỹ thuật.",
     "viewCv": "Xem CV"
   },
   "skill": {

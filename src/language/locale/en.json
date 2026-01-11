@@ -20,7 +20,7 @@
   },
   "about": {
     "title": "Who I am?",
-    "content": "Hi, I'm Nguyen Minh Chau. I'm a Software Developer with 2 years of experience in developing and maintaining software applications. I have a strong foundation in Java, JavaScript & TypeScript, Python and PHP. I have worked on projects involving React, Spring boot, Yii2, NestJS. I am passionate about creating efficient and scalable software solutions.",
+    "content": "Software Engineer with 2+ years of experience building scalable and reliable web applications, with a strong focus on backend development and system integration. Proficient in PHP, JavaScript, and TypeScript, with hands-on experience using Laravel, Symfony, Yii2, React.js, and Vue.js. Experienced in designing RESTful APIs, integrating third-party services, and working with MySQL and PostgreSQL. Familiar with CI/CD pipelines, Dockerized environments, and cloud platforms. A collaborative team player passionate about building maintainable systems and continuously improving technical skills.",
     "viewCv": "View CV"
   },
   "skill": {
