@@ -2,11 +2,11 @@ import {TFunction} from "i18next";
 
 export const getSkillData = (t: TFunction) => [
 	{
-		title: "Software Developer",
+		title: t("skill.softwareDeveloperTitle"),
 		content: t("skill.softwareDeveloper")
 	},
 	{
-		title: "Web development",
-		content: t("skill.webDevelopment")
+		title: t("skill.exploringOpenSourceTitle"),
+		content: t("skill.exploringOpenSource")
 	}
 ]

@@ -2,18 +2,53 @@
 
 .block {
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .layer {
         border-radius: 20px;
-        padding: 20px;
+        padding: 30px 30px 20px 30px;
         overflow: hidden;
         backdrop-filter: blur(80px);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 100%;
+        transition: all 0.4s ease;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1670f0, #1779ff);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            
+            &::before {
+                opacity: 1;
+            }
+        }
 
         .title {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            flex-shrink: 0;
+            position: relative;
 
             h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                margin: 0;
+                line-height: 1.3;
             }
         }
 
@@ -21,29 +56,36 @@
             text-align: justify;
             max-height: 220px;
             overflow: hidden;
-            mask-image: linear-gradient(#000000 50%, transparent);
+            mask-image: linear-gradient(#000000 70%, transparent);
+            flex: 1;
+            min-height: 0;
+            line-height: 1.8;
 
             &.toggle {
                 max-height: unset;
                 mask-image: none;
-                transition: all 1s;
+                transition: all 0.8s ease;
             }
 
             p{
-                font-size: 1.3rem;
+                font-size: 1.15rem;
+                margin: 0;
+                line-height: 1.8;
             }
         }
 
         .toggle-button {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 15px auto 5px;
+            justify-content: flex-start;
+            gap: 10px;
+            margin: 15px 0 0;
             padding: 8px 0;
             cursor: pointer;
             position: relative;
             transition: all 0.3s ease;
+            flex-shrink: 0;
+            width: fit-content;
 
             .toggle-text {
                 font-size: 1rem;
@@ -91,6 +133,24 @@
         .layer {
             border: $darkBorder;
             box-shadow: $darkShadow;
+            background: rgba(18, 18, 28, 0.6);
+
+            &:hover {
+                box-shadow: 0 12px 40px rgba(22, 112, 240, 0.25), $darkShadow;
+                border-color: rgba(23, 121, 255, 0.3);
+            }
+
+            .title {
+                h3 {
+                    background: linear-gradient(135deg, #1670f0, #1779ff);
+                    background-clip: text;
+                    color: transparent;
+                }
+            }
+
+            .content {
+                color: rgba(255, 255, 255, 0.85);
+            }
 
             .toggle-button {
                 .toggle-text {
@@ -126,6 +186,8 @@
             background:linear-gradient(135deg, #1670f0, #1779ff);
             z-index: -2;
             animation: lightMove 10s infinite linear;
+            top: 0;
+            left: 0;
 
             &.reverse {
                 animation: lightMove 10s infinite linear reverse;
@@ -162,6 +224,24 @@
         border: $lightBorder;
         box-shadow: $lightShadow;
         background-color: #FFFFFF;
+        transition: all 0.4s ease;
+
+        &:hover {
+            box-shadow: 0 12px 40px rgba(22, 112, 240, 0.15), $lightShadow;
+            border-color: rgba(22, 112, 240, 0.3);
+        }
+
+        .title {
+            h3 {
+                background: linear-gradient(135deg, #1670f0, #1779ff);
+                background-clip: text;
+                color: transparent;
+            }
+        }
+
+        .content {
+            color: #444444;
+        }
 
         .toggle-button {
             .toggle-text {

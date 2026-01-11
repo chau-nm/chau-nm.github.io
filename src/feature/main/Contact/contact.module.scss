@@ -36,8 +36,11 @@
   .form-wrapper {
     border: $lightBorder;
     box-shadow: $lightShadow;
+    background-color: #FFFFFF;
 
-    &, * {
+    input,
+    textarea,
+    label {
       background-color: #FFFFFF;
     }
   }
