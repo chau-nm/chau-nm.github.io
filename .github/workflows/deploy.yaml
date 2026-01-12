@@ -29,6 +29,10 @@ jobs:
         run: |
           git config --global user.name "github-actions-bot"
           git config --global user.email "support+actions@github.com"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Deploy with gh-pages
         run: yarn deploy
         env:
