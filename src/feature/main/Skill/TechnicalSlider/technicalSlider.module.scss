@@ -1,7 +1,8 @@
 @import "theme/sass/theme";
 
 .block {
-  width: 96px;
+  width: fit-content;
+  min-width: 96px;
   height: 100px;
   border-radius: 5px;
   text-align: center;
@@ -15,6 +16,10 @@
     img {
       height: 100%;
     }
+
+    .dark-logo {
+      filter: brightness(1.5) contrast(1.1);
+    }
   }
 
   span {
@@ -26,6 +31,12 @@
   .block {
     border:$darkBorder;
     box-shadow: $darkShadow;
+
+    .img-wrapper {
+      .dark-logo {
+        filter: brightness(2) contrast(1.2);
+      }
+    }
   }
 }
 

@@ -1,50 +1,80 @@
 import {
-	CSSSkill,
-	DockerSkill,
-	HTMLSkill,
+	PhpSkill,
+	LaravelSkill,
+	SymfonySkill,
+	Yii2Skill,
+	GoLangSkill,
 	JavaScriptSkill,
-	JavaSkill,
-	MySQLLogo,
-	PostgreSkill,
-	PythonSkill,
-	TypeScriptLogo
+	TypeScriptSkill,
+	ReactJSSkill,
+	MySQLSkill,
+	PostgreSQLSkill,
+	DockerSkill,
+	KubernetesSkill,
+	GitHubSkill,
+	CloudflareSkill,
+	DigitalOceanSkill
 } from "assets/images/logo";
 
 export const technicalData = [
 	{
-		imageUrl: HTMLSkill,
-		caption: "HTML"
+		imageUrl: PhpSkill,
+		caption: "PHP"
 	},
 	{
-		imageUrl: CSSSkill,
-		caption: "CSS"
+		imageUrl: LaravelSkill,
+		caption: "Laravel"
+	},
+	{
+		imageUrl: SymfonySkill,
+		caption: "Symfony"
+	},
+	{
+		imageUrl: Yii2Skill,
+		caption: "Yii2"
+	},
+	{
+		imageUrl: GoLangSkill,
+		caption: "GoLang"
 	},
 	{
 		imageUrl: JavaScriptSkill,
-		caption: "Javascript"
+		caption: "JavaScript"
 	},
 	{
-		imageUrl: TypeScriptLogo,
-		caption: "Typescript"
+		imageUrl: TypeScriptSkill,
+		caption: "TypeScript"
 	},
 	{
-		imageUrl: JavaSkill,
-		caption: "Java"
+		imageUrl: ReactJSSkill,
+		caption: "ReactJS"
 	},
 	{
-		imageUrl: PythonSkill,
-		caption: "Python"
-	},
-	{
-		imageUrl: MySQLLogo,
+		imageUrl: MySQLSkill,
 		caption: "MySQL"
 	},
 	{
-		imageUrl: PostgreSkill,
-		caption: "Postgres"
+		imageUrl: PostgreSQLSkill,
+		caption: "PostgreSQL"
 	},
 	{
 		imageUrl: DockerSkill,
 		caption: "Docker"
+	},
+	{
+		imageUrl: KubernetesSkill,
+		caption: "Kubernetes"
+	},
+	{
+		imageUrl: GitHubSkill,
+		caption: "GitHub"
+	},
+	{
+		imageUrl: CloudflareSkill,
+		caption: "Cloudflare"
+	},
+	{
+		imageUrl: DigitalOceanSkill,
+		caption: "DigitalOcean"
 	},
 ]
