@@ -25,25 +25,8 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
     const titleText = titleElement.querySelector(".title-text");
     const questionMark = titleElement.querySelector(".question-mark");
     const timeline = timelineScroll(titleElement);
-    applyQuestionBoxTween(timeline, questionBox);
     applyTitleTextTween(timeline, titleText);
-    applyQuestionMarkTween(timeline, questionMark);
   });
-
-  const applyQuestionBoxTween = (
-    timeline: GSAPTimeline,
-    target: GSAPTweenTarget
-  ) => {
-    timeline.fromTo(
-      target,
-      {
-        scale: 0.8,
-        opacity: 0,
-        y: 20,
-      },
-      { scale: 1, opacity: 1, y: 0, duration: 0.6 }
-    );
-  };
 
   const applyTitleTextTween = (
     timeline: GSAPTimeline,
@@ -55,24 +38,10 @@ export const SectionWrapper: FC<SectionWrapperProps> = ({
         opacity: 0,
         y: 30,
       },
-      { opacity: 1, y: 0, duration: 0.8, delay: 0.2 }
+      { opacity: 1, y: 0, duration: 0.6 }
     );
   };
 
-  const applyQuestionMarkTween = (
-    timeline: GSAPTimeline,
-    target: GSAPTweenTarget
-  ) => {
-    timeline.fromTo(
-      target,
-      {
-        scale: 0,
-        rotation: -180,
-        opacity: 0,
-      },
-      { scale: 1, rotation: 0, opacity: 1, duration: 0.6, delay: 0.1 }
-    );
-  };
 
   return (
     <div id={sectionId} className={classNames("section", className)}>
