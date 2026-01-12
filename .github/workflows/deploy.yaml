@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - run: |
+          echo "{\"mailService\": \"${{ secrets.MAIL_SERVICE }}\", \"mailThankYouTemplate\": \"${{ secrets.MAIL_THANK_YOU_TEMPLATE }}\", \"mailFeedbackTemplate\": \"${{ secrets.MAIL_FEEDBACK_TEMPLATE }}\", \"publicKey\": \"${{ secrets.PUBLIC_KEY }}\"}" > src/mail/config.json
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_PAGE_ACCOUNT_ID }}
+          command: |
+            pages deploy build/ --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
