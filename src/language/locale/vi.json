@@ -78,7 +78,7 @@
     },
     "knowledgePortal": {
       "title": "Knowledge Portal",
-      "description": "Dự án này cung cấp dịch vụ cho các trường đại học tại Nhật Bản. Vào thời điểm bắt đầu của dự án, tôi đã may mắn được tham gia thử việc để nhận dự án này từ phía khách hàng cùng với 4 đồng nghiệp khác. Chúng tôi đã hoàn thành đợt thử việc và được khách hàng ký hợp đồng."
+      "description": "Nền tảng dịch vụ được thiết kế cho các trường đại học tại Nhật Bản để quản lý và chia sẻ tài nguyên tri thức. Nền tảng cung cấp khả năng quản lý nội dung toàn diện với CMS được xây dựng bằng EditorJS, cho phép người dùng tạo và quản lý nội dung giáo dục hiệu quả. Các tính năng chính bao gồm xác thực đăng nhập một lần (SSO) sử dụng giao thức SAML với Keycloak IDP, hỗ trợ đa ngôn ngữ được hỗ trợ bởi i18next và DeepL API để dịch thuật mượt mà, và tối ưu hóa hiệu suất hệ thống để xử lý các hoạt động quy mô lớn. Nền tảng tích hợp với các hệ thống đại học khác nhau để tối ưu hóa việc chia sẻ tri thức và hợp tác."
     },
     "knowledgePortalGateway": {
       "title": "Knowledge Portal Gateway",

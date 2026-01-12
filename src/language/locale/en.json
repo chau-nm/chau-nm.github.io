@@ -78,7 +78,7 @@
     },
     "knowledgePortal": {
       "title": "Knowledge Portal",
-      "description": "This project provides services for universities in Japan. At the beginning of this project, I was lucky to participate as an intern with four colleagues. We finished our internship and have been contracted by the client ever since."
+      "description": "A service platform designed for universities in Japan to manage and share knowledge resources. The platform provides comprehensive content management capabilities with a CMS built using EditorJS, enabling users to create and manage educational content efficiently. Key features include single sign-on (SSO) authentication using SAML protocol with Keycloak IDP, multi-language support powered by i18next and DeepL API for seamless translation, and system performance optimization for handling large-scale operations. The platform integrates with various university systems to streamline knowledge sharing and collaboration."
     },
     "knowledgePortalGateway": {
       "title": "Knowledge Portal Gateway",
