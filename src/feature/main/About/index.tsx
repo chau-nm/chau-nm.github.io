@@ -8,6 +8,7 @@ import styles from "./about.module.scss";
 import {useNavigate} from "react-router-dom";
 import { CV } from "common/path";
 import {useTranslation} from "react-i18next";
+import cvPdf from "../../../assets/cv/nguyenminhchau.pdf";
 
 enum refNames {
   about = "about",
@@ -43,7 +44,7 @@ const About: FC = () => {
   };
   
   const handleMoveViewCV = () => {
-    navigate(CV);
+    window.open(cvPdf, '_blank')
   }
 
   return (
