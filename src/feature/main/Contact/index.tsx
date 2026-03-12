@@ -85,7 +85,7 @@ const Contact: FC = () => {
 					});
 					setSendingMail(false);
 					resetFields();
-					await sendMailThankyou(fieldValues);
+					// await sendMailThankyou(fieldValues);
 				},
 				(error) => {
 					toast(error,{
