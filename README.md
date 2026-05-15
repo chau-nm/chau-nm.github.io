@@ -98,4 +98,4 @@ src/
 
 ## License
 
-This project is private and personal..
+This project is private and personal.
